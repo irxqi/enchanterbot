@@ -1,0 +1,20 @@
+[
+    "pickaxe", "sword", "shield", "arrow", "bow", "armor", "helmet", "chest", "pants", "boots",
+    "torch", "ladder", "chest", "furnace", "anvil", "enchant", "potion", "apple", "bread", "steak",
+    "coal", "iron", "gold", "diamond", "emerald", "redstone", "lapis", "quartz", "slime", "magma",
+    "blaze", "ghast", "creeper", "zombie", "skeleton", "spider", "enderman", "witch", "villager", "golem",
+    "wolf", "ocelot", "horse", "cow", "pig", "sheep", "chicken", "squid", "bat", "rabbit",
+    "oak", "spruce", "birch", "jungle", "acacia", "crimson", "planks", "log", "stick", "sapling",
+    "leaves", "grass", "flower", "rose", "lily", "mushroom", "cactus", "sugar", "cane", "vine",
+    "water", "lava", "ice", "snow", "sand", "gravel", "clay", "stone", "cobble", "moss",
+    "ore", "ingot", "nugget", "block", "slab", "stairs", "fence", "gate", "door", "trapdoor",
+    "bed", "cake", "pumpkin", "melon", "carrot", "potato", "beetroot", "seed", "wheat", "hay",
+    "wool", "carpet", "banner", "sign", "book", "paper", "map", "compass", "clock", "fishing",
+    "bucket", "minecart", "rail", "boat", "saddle", "turtle", "elytra", "chorus", "shulker", "ender",
+    "pearl", "eye", "star", "rod", "warden", "gunpowder", "string", "feather", "flint", "steel",
+    "bone", "meal", "dye", "ink", "glass", "pane", "brick", "nether", "brick", "quartz",
+    "prismarine", "sea", "lantern", "conduit", "trident", "nautilus", "heart", "totem", "shield", "axe",
+    "hoe", "shovel", "bucket", "milk", "honey", "comb", "nest", "hive", "observer", "dropper",
+    "hopper", "dispenser", "piston", "sticky", "button", "lever", "plate", "tripwire", "hook", "redstone",
+    "repeater", "comparator", "lamp", "tnt", "firework", "star", "rocket", "crossbow", "trident", "netherite"
+]
