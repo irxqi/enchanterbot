@@ -2,7 +2,7 @@ const { Client, GatewayIntentBits, EmbedBuilder, ActionRowBuilder, ButtonBuilder
 const fs = require('fs');
 const path = require('path');
 const { createCanvas, loadImage, registerFont } = require('canvas');
-import startServer from './keep_alive.js';
+const startServer = require('./keep_alive.js');
 require('dotenv').config(); // Load environment variables
 
 // Load configuration
