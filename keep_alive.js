@@ -1,6 +1,5 @@
-// keep_alive.js
-
-import http from 'http';
+// keep_alive.js (CommonJS version)
+const http = require('http');
 
 const startServer = () => {
   const server = http.createServer((req, res) => {
@@ -13,4 +12,4 @@ const startServer = () => {
   });
 };
 
-export default startServer;
+module.exports = startServer;
