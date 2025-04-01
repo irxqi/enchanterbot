@@ -6,7 +6,7 @@ const startServer = require('./keep_alive.js');
 require('dotenv').config(); // Load environment variables
 
 // Load configuration
-const { token, clientId, rankRoles, RESULTS_CHANNEL_ID } = require('./config.json');
+const { rankRoles } = require('./config.json');
 const words = require('./words.json');
 
 // Initialize stats
@@ -373,12 +373,12 @@ const commands = [
 ].map(command => command.toJSON());
 
 // Register commands
-const rest = new REST({ version: '10' }).setToken(token);
+const rest = new REST({ version: '10' }).setToken(process.env.token);
 
 (async () => {
     try {
         console.log('Refreshing slash commands...');
-        await rest.put(Routes.applicationCommands(clientId), { body: commands });
+        await rest.put(Routes.applicationCommands(process.env.clientId), { body: commands });
         console.log('Slash commands registered!');
     } catch (error) {
         console.error('Error registering commands:', error);
@@ -484,7 +484,7 @@ client.on('interactionCreate', async interaction => {
                     opponent: opponent,
                     channelId: interaction.channelId,
                     timestamp: Date.now(),
-                    resultsChannelId: RESULTS_CHANNEL_ID
+                    resultsChannelId: process.env.RESULTS_CHANNEL_ID
                 });
                 
                 const challengeEmbed = new EmbedBuilder()
@@ -637,7 +637,7 @@ client.on('interactionCreate', async interaction => {
                 if (action === 'accept') {
                     duelChallenges.delete(challengerId);
                     
-                    const resultsChannel = await client.channels.fetch(RESULTS_CHANNEL_ID).catch(console.error);
+                    const resultsChannel = await client.channels.fetch(process.env.RESULTS_CHANNEL_ID).catch(console.error);
                     
                     async function sendCountdown(user) {
                         const countdownEmbed = new EmbedBuilder()
@@ -677,7 +677,7 @@ client.on('interactionCreate', async interaction => {
                         startTime: Date.now(),
                         isDuel: true,
                         opponentId: challenge.opponent.id,
-                        resultsChannelId: RESULTS_CHANNEL_ID
+                        resultsChannelId: process.env.RESULTS_CHANNEL_ID
                     };
                     
                     const opponentGame = {
@@ -690,7 +690,7 @@ client.on('interactionCreate', async interaction => {
                         startTime: Date.now(),
                         isDuel: true,
                         opponentId: challenge.challenger.id,
-                        resultsChannelId: RESULTS_CHANNEL_ID
+                        resultsChannelId: process.env.RESULTS_CHANNEL_ID
                     };
                     
                     activeGames.set(challenge.challenger.id, challengerGame);
@@ -1009,7 +1009,7 @@ process.on('unhandledRejection', (error) => {
 });
 
 // Login
-client.login(token).catch(error => {
+client.login(process.env.token).catch(error => {
     console.error('Failed to login:', error);
     process.exit(1);
 });    
