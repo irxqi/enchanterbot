@@ -1,5 +1,4 @@
 {
-  "type": "module",
   "dependencies": {
     "@discordjs/rest": "^2.4.3",
     "canvas": "^3.1.0",
